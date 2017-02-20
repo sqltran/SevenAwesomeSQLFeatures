@@ -106,3 +106,19 @@ create user ITuser with password = 'ITpassword1';
 create user CSuser with password = 'CSpassword1';
 create user HRuser with password = 'HRpassword1';
 create user PRODuser with password = 'PRODpassword1';
+
+go
+
+grant select on dbo.Department to EXECuser;
+grant select on dbo.Department to MRKTuser;
+grant select on dbo.Department to ITuser;
+grant select on dbo.Department to CSuser;
+grant select on dbo.Department to HRuser;
+grant select on dbo.Department to PRODuser;
+
+grant select on dbo.Employee to EXECuser;
+grant select on dbo.Employee to MRKTuser;
+grant select on dbo.Employee to ITuser;
+grant select on dbo.Employee to CSuser;
+grant select on dbo.Employee to HRuser;
+grant select on dbo.Employee to PRODuser;
