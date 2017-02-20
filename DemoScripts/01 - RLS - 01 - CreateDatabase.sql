@@ -1,3 +1,6 @@
+-- use master;
+-- go
+-- drop database CompanyHR;
 use master;
 go
 exec sys.sp_configure 'contained database authentication', 1;
@@ -7,6 +10,7 @@ create database CompanyHR containment = partial;
 go
 use CompanyHR;
 go
+-- drop table Department
 create table Department
 (
 	DepartmentCode varchar(5) primary key clustered,
@@ -22,6 +26,7 @@ create table Employee
 	LastName nvarchar(40),
 	DepartmentCode varchar(5),
 	Salary money,
+	LoginName sysname,
 	constraint fk_Employee_DepartmentCode foreign key (DepartmentCode) references dbo.Department (DepartmentCode)
 );
 go
@@ -94,31 +99,13 @@ inner join EmployeesByDepartmentBySalary eds on eds.DepartmentCode = d.Departmen
 where eds.rn = 1;
 
 go
-
 alter table dbo.Department alter column LeaderEmployeeID int not null;
 alter table dbo.Department add constraint fk_Department_LeaderEmployeeID foreign key (LeaderEmployeeID) references dbo.Employee (EmployeeID);
-
 go
 
-create user EXECuser with password = 'EXECpassword1';
-create user MRKTuser with password = 'MRKTpassword1';
-create user ITuser with password = 'ITpassword1';
-create user CSuser with password = 'CSpassword1';
-create user HRuser with password = 'HRpassword1';
-create user PRODuser with password = 'PRODpassword1';
-
+update dbo.Employee set LoginName = lower(left(FirstName,1)) + lower(LastName);
 go
 
-grant select on dbo.Department to EXECuser;
-grant select on dbo.Department to MRKTuser;
-grant select on dbo.Department to ITuser;
-grant select on dbo.Department to CSuser;
-grant select on dbo.Department to HRuser;
-grant select on dbo.Department to PRODuser;
-
-grant select on dbo.Employee to EXECuser;
-grant select on dbo.Employee to MRKTuser;
-grant select on dbo.Employee to ITuser;
-grant select on dbo.Employee to CSuser;
-grant select on dbo.Employee to HRuser;
-grant select on dbo.Employee to PRODuser;
+declare @sql nvarchar(max) = '';
+select @sql = @sql + 'drop user if exists [' + LoginName + ']; create user [' + LoginName + '] without login; grant select on dbo.Department to [' + LoginName + ']; grant select, update, insert, delete on dbo.Employee to [' + LoginName + ']; ' from dbo.Employee;
+exec(@sql);
