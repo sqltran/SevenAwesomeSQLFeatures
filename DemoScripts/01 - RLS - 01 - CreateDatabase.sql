@@ -14,7 +14,7 @@ go
 create table Department
 (
 	DepartmentCode varchar(5) primary key clustered,
-	Description nvarchar(50),
+	Description nvarchar(50) not null,
 	LeaderEmployeeID int null
 );
 
@@ -22,11 +22,11 @@ create table Department
 create table Employee
 (
 	EmployeeID int not null identity(1,1) primary key clustered,
-	FirstName nvarchar(40),
-	LastName nvarchar(40),
-	DepartmentCode varchar(5),
-	Salary money,
-	LoginName sysname,
+	FirstName nvarchar(40) not null,
+	LastName nvarchar(40) not null,
+	DepartmentCode varchar(5) not null,
+	Salary money not null,
+	LoginName sysname null,
 	constraint fk_Employee_DepartmentCode foreign key (DepartmentCode) references dbo.Department (DepartmentCode)
 );
 go
