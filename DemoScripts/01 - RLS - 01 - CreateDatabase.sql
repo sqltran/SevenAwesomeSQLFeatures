@@ -10,6 +10,13 @@ create database CompanyHR containment = partial;
 go
 use CompanyHR;
 go
+exec sp_configure 'show advanced options', 1;
+reconfigure
+exec sp_configure 'default full-text language', 1043;
+reconfigure
+exec sp_configure 'show advanced options', 0;
+reconfigure
+
 -- drop table Department
 create table Department
 (
