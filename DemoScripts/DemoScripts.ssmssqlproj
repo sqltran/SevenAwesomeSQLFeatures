@@ -19,17 +19,29 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="01 - RLS - 01 - CreateDatabase.sql">
+        <FileNode Name="01 - RLS - 01 - Create Database.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>01 - RLS - 01 - CreateDatabase.sql</FullPath>
+          <FullPath>01 - RLS - 01 - Create Database.sql</FullPath>
         </FileNode>
-        <FileNode Name="01 - RLS - 02 - EmployeePredicate.sql">
+        <FileNode Name="01 - RLS - 02 - Employee Predicate.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>01 - RLS - 02 - EmployeePredicate.sql</FullPath>
+          <FullPath>01 - RLS - 02 - Employee Predicate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="01 - RLS - 03 - Block Predicate.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01 - RLS - 03 - Block Predicate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="01 - RLS - 04 - Information Leakage.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01 - RLS - 04 - Information Leakage.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
