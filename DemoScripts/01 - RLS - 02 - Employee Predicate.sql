@@ -1,7 +1,11 @@
 use CompanyHR;
 go
--- Initially, all users can see everything in the Employee table.
 
+-- HR Database with an employees table and a departments table.
+select * from Employee;
+select * from Department;
+
+-- Initially, all users can see everything in the Employee table.
 execute as user = 'jellis';  -- Customer service employee
 select * from Employee;
 revert;

@@ -1,3 +1,6 @@
+use CompanyHR;
+go
+
 -- So how can prevent a user from updating a row in such a way
 -- that they can no longer access that data?
 -- Answer: Block predicates.
