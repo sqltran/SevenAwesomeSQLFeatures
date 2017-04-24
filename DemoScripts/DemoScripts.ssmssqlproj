@@ -19,6 +19,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="00 - Select Random Number.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>00 - Select Random Number.sql</FullPath>
+        </FileNode>
         <FileNode Name="01 - RLS - 01 - Create Database.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
@@ -42,6 +48,36 @@
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>01 - RLS - 04 - Information Leakage.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Snapshots - 01 - Take Snapshot.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02 - Snapshots - 01 - Take Snapshot.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Snapshots - 02 - Failed Deploy.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02 - Snapshots - 02 - Failed Deploy.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Partitions - 01 - Create Temporal Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - Partitions - 01 - Create Temporal Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Partitions - 02 - .sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - Partitions - 02 - .sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Partitions - 02 - Random Updates to Product.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - Partitions - 02 - Random Updates to Product.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
