@@ -1,5 +1,7 @@
 -- use master;
 -- go
+-- alter database CompanyHR set offline with rollback immediate;
+-- alter database CompanyHR set online with rollback immediate;
 -- drop database CompanyHR;
 use master;
 go
@@ -116,3 +118,18 @@ go
 declare @sql nvarchar(max) = '';
 select @sql = @sql + 'drop user if exists [' + LoginName + ']; create user [' + LoginName + '] without login; grant select on dbo.Department to [' + LoginName + ']; grant select, update, insert, delete on dbo.Employee to [' + LoginName + ']; ' from dbo.Employee;
 exec(@sql);
+go
+use CompanyHR;
+go
+drop procedure if exists upUpdateEmployeeSalary;
+go
+create procedure upUpdateEmployeeSalary
+(
+	@LoginName sysname,
+	@NewSalary money
+)
+as
+update dbo.Employee
+set Salary = @NewSalary
+where LoginName = @LoginName;
+go
