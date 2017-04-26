@@ -49,3 +49,8 @@ select *
 from PersonDim pd
 where pd.State = 'TN';
 -- Now requires 1354 logical reads.
+
+select PersonId, FirstName, LastName
+from PersonDim pd
+where pd.State = 'TN';
+-- Limiting the number of columns cuts down the I/O as well - 870 logical reads.
