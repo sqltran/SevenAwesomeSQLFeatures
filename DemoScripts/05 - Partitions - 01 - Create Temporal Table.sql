@@ -7,14 +7,6 @@ go
 use Sales;
 go
 
-/*
-alter table Product set (system_versioning = off);
-drop table Product;
-drop table ProductHistory;
-drop partition scheme schemeProductHistoryPartitionByEndTime;
-drop partition function fnProductHistoryPartitionByEndTime;
-*/
-
 create partition function fnProductHistoryPartitionByEndTime (datetime2)
 as range left for values ('2017-02-01', '2017-03-01', '2017-04-01', '2017-05-01');
 
@@ -41,12 +33,6 @@ create table Product
 	EndTime datetime2 not null,
 	constraint pk_Product primary key clustered (ProductID)
 ) with (system_versioning = off);
-
-/*
-drop table ProductArchive;
-drop partition scheme schemeProductArchivePartitionByEndTime;
-drop partition function fnProductArchivePartitionByEndTime;
-*/
 
 create partition function fnProductArchivePartitionByEndTime (datetime2)
 as range left for values ('2017-02-01', '2017-03-01');
