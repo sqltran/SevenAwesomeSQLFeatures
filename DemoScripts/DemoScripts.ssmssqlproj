@@ -61,23 +61,35 @@
           <AssociatedConnUserName />
           <FullPath>02 - Snapshots - 02 - Failed Deploy.sql</FullPath>
         </FileNode>
+        <FileNode Name="04 - Columnstore - 01 - Create Database.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04 - Columnstore - 01 - Create Database.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Columnstore - 02 - Querying Columnstore.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04 - Columnstore - 02 - Querying Columnstore.sql</FullPath>
+        </FileNode>
         <FileNode Name="05 - Partitions - 01 - Create Temporal Table.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>05 - Partitions - 01 - Create Temporal Table.sql</FullPath>
         </FileNode>
-        <FileNode Name="05 - Partitions - 02 - .sql">
+        <FileNode Name="05 - Partitions - 02 - Fake Load Temporal Table.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>05 - Partitions - 02 - .sql</FullPath>
+          <FullPath>05 - Partitions - 02 - Fake Load Temporal Table.sql</FullPath>
         </FileNode>
-        <FileNode Name="05 - Partitions - 02 - Random Updates to Product.sql">
+        <FileNode Name="05 - Partitions - 03 - Purge History.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>05 - Partitions - 02 - Random Updates to Product.sql</FullPath>
+          <FullPath>05 - Partitions - 03 - Purge History.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
