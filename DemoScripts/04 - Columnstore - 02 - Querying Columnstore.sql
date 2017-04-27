@@ -28,7 +28,7 @@ alter table PersonDim drop constraint pk_PersonDim;
 create clustered columnstore index cci_PersonDim on PersonDim;
 
 exec sp_spaceused 'PersonDim';
--- Data size = 5696 KB  ==> 18x compression!
+-- Data size = 5700 KB  ==> 18x compression!
 
 select *
 from PersonDim pd
@@ -54,3 +54,10 @@ select PersonId, FirstName, LastName
 from PersonDim pd
 where pd.State = 'TN';
 -- Limiting the number of columns cuts down the I/O as well - 870 logical reads.
+
+-- Cleanup
+use master;
+go
+alter database PersonDW set offline with rollback immediate;
+alter database PersonDW set online with rollback immediate;
+drop database PersonDW;
