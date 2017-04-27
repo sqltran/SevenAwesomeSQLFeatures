@@ -23,6 +23,6 @@ delete ProductHistory
 where StartTime >= @RangeStart
 and StartTime < @RangeEnd;
 
-
+rollback;
 alter table Product set (system_versioning = on);
 alter table Product set (system_versioning = off);

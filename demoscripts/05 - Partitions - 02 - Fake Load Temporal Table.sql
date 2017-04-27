@@ -4,39 +4,51 @@
 use Sales;
 go
 declare @ProductID int;
-declare @ChangePercent float;
+declare @ChangeAmount float;
 declare @ChangeTime datetime2 = '2017-01-01';
 
 while @ChangeTime < '2017-04-24'
 begin
 	select top 1 @ProductID = ProductID
-	from Product
+	from TempProduct
 	order by newid();
 
-	select @ChangePercent = 0.5 - (binary_checksum(newid()) + 2147483648.) / 4294967296.;
+	select @ChangeAmount = 0.5 - (binary_checksum(newid()) + 2147483648.) / 4294967296.;
 
 	insert ProductHistory (ProductID, CurrentPrice, StartTime, EndTime)
 	select ProductID, CurrentPrice, StartTime, @ChangeTime
-	from Product
+	from TempProduct
 	where ProductID = @ProductID;
 
-	update Product
-	set CurrentPrice += CurrentPrice * @ChangePercent,
+	update TempProduct
+	set CurrentPrice += @ChangeAmount,
 		StartTime = @ChangeTime
 	where ProductID = @ProductID;
 
 	select @ChangeTime = dateadd(second, 60, @ChangeTime);
-	select @ChangeTime = dateadd(millisecond, @ChangePercent * 1000, @ChangeTime);
-	select @ChangeTime = dateadd(nanosecond, @ChangePercent * 1001001, @ChangeTime);
+	select @ChangeTime = dateadd(millisecond, @ChangeAmount * 1000, @ChangeTime);
+	select @ChangeTime = dateadd(nanosecond, @ChangeAmount * 1001001, @ChangeTime);
 end
 
-alter table Product
-add period for system_time (StartTime, EndTime);
+create table Product
+(
+	ProductID int not null identity(1,1),
+	CurrentPrice money not null,
+	StartTime datetime2 generated always as row start,
+	EndTime datetime2 generated always as row end,
+	period for system_time (StartTime, EndTime),
+	constraint pk_Product primary key clustered (ProductID)
+) with (system_versioning = on (history_table = dbo.ProductHistory));
 
-alter table Product
-set (system_versioning = on (history_table = dbo.ProductHistory));
+set identity_insert Product on;
 
+insert Product (ProductId, CurrentPrice)
+select ProductId, CurrentPrice
+from TempProduct;
 
+set identity_insert Product off;
+
+drop table TempProduct;
 
 
 
