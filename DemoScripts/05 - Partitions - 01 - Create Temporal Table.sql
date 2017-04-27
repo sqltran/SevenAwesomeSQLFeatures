@@ -7,6 +7,18 @@ go
 use Sales;
 go
 
+create table Product
+(
+	ProductID int not null identity(1,1),
+	CurrentPrice money not null,
+	StartTime datetime2 generated always as row start not null,
+	EndTime datetime2 generated always as row end not null,
+	period for system_time (StartTime, EndTime),
+	constraint pk_Product primary key clustered (ProductID)
+) with (system_versioning = oN (history_table = dbo.ProductHistory));
+
+alter table Product set (system_versioning = off);
+
 create partition function fnProductHistoryPartitionByEndTime (datetime2)
 as range left for values ('2017-02-01', '2017-03-01', '2017-04-01', '2017-05-01');
 
@@ -14,13 +26,7 @@ create partition scheme schemeProductHistoryPartitionByEndTime
 as partition fnProductHistoryPartitionByEndTime
 to ([primary], [primary], [primary], [primary], [primary]);
 
-create table ProductHistory
-(
-	ProductID int not null,
-	CurrentPrice money not null,
-	StartTime datetime2(7) not null,
-	EndTime datetime2(7) not null
-);
+drop index ProductHistory.ix_ProductHistory;
 
 create clustered index clidx_ProductHistory on ProductHistory (EndTime, StartTime)
 on schemeProductHistoryPartitionByEndTime (EndTime);

@@ -30,15 +30,7 @@ begin
 	select @ChangeTime = dateadd(nanosecond, @ChangeAmount * 1001001, @ChangeTime);
 end
 
-create table Product
-(
-	ProductID int not null identity(1,1),
-	CurrentPrice money not null,
-	StartTime datetime2 generated always as row start,
-	EndTime datetime2 generated always as row end,
-	period for system_time (StartTime, EndTime),
-	constraint pk_Product primary key clustered (ProductID)
-) with (system_versioning = on (history_table = dbo.ProductHistory));
+alter table Product set (system_versioning = on (history_table = dbo.ProductHistory, data_consistency_check = on));
 
 set identity_insert Product on;
 
@@ -51,21 +43,4 @@ set identity_insert Product off;
 drop table TempProduct;
 
 
-
-
 backup database Sales to disk = 'Sales.bak' with init;
-
-use master;
-go
-alter database Sales set offline with rollback immediate;
-go
-restore database Sales from disk = 'Sales.bak' with replace;
-
-insert Product (CurrentPrice)
-values (54.00);
-
-select scope_identity();
-
-update Product
-set CurrentPrice = 55.00
-where ProductID = 1002;

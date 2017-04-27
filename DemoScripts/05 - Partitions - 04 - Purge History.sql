@@ -1,3 +1,5 @@
+use Sales;
+go
 select 'Product' TableName, count(*) NbrRows from Product
 union all
 select 'ProductHistory' TableName, count(*) NbrRows from ProductHistory
