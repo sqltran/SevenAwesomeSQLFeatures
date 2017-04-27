@@ -35,3 +35,25 @@ add period for system_time (StartTime, EndTime);
 
 alter table Product
 set (system_versioning = on (history_table = dbo.ProductHistory));
+
+
+
+
+
+
+backup database Sales to disk = 'Sales.bak' with init;
+
+use master;
+go
+alter database Sales set offline with rollback immediate;
+go
+restore database Sales from disk = 'Sales.bak' with replace;
+
+insert Product (CurrentPrice)
+values (54.00);
+
+select scope_identity();
+
+update Product
+set CurrentPrice = 55.00
+where ProductID = 1002;

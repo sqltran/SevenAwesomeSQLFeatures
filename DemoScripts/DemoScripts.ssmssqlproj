@@ -85,11 +85,17 @@
           <AssociatedConnUserName />
           <FullPath>05 - Partitions - 02 - Fake Load Temporal Table.sql</FullPath>
         </FileNode>
-        <FileNode Name="05 - Partitions - 03 - Purge History.sql">
+        <FileNode Name="05 - Partitions - 03 - Slow Purge.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>05 - Partitions - 03 - Purge History.sql</FullPath>
+          <FullPath>05 - Partitions - 03 - Slow Purge.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Partitions - 04 - Purge History.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - Partitions - 04 - Purge History.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
