@@ -15,7 +15,7 @@ create table Product
 	EndTime datetime2 generated always as row end not null,
 	period for system_time (StartTime, EndTime),
 	constraint pk_Product primary key clustered (ProductID)
-) with (system_versioning = oN (history_table = dbo.ProductHistory));
+) with (system_versioning = on (history_table = dbo.ProductHistory));
 
 alter table Product set (system_versioning = off);
 

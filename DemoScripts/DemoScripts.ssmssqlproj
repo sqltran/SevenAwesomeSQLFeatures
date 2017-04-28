@@ -61,6 +61,18 @@
           <AssociatedConnUserName />
           <FullPath>02 - Snapshots - 02 - Failed Deploy.sql</FullPath>
         </FileNode>
+        <FileNode Name="03 - Temporal - 01 - Create Tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03 - Temporal - 01 - Create Tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Temporal - 02 - Updates.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03 - Temporal - 02 - Updates.sql</FullPath>
+        </FileNode>
         <FileNode Name="04 - Columnstore - 01 - Create Database.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
