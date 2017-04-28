@@ -109,6 +109,24 @@
           <AssociatedConnUserName />
           <FullPath>05 - Partitions - 04 - Purge History.sql</FullPath>
         </FileNode>
+        <FileNode Name="06 - Hekaton - 01 - Create Database.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06 - Hekaton - 01 - Create Database.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - Hekaton - 02 - Create Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06 - Hekaton - 02 - Create Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - Hekaton - 03 - Native Stored Procs.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local)\expr2016sp1:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)\expr2016sp1</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06 - Hekaton - 03 - Native Stored Procs.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
