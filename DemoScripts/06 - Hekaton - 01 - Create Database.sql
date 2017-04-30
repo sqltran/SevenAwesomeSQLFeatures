@@ -5,13 +5,16 @@
 -- Feel free to use this code in any way you see fit, but do so at your own risk
 -----------------------------------------------------------------------------------------------------------------------
 use master;
-go;
+go
 -- Create the database and enable Hekaton.
 -- Note that we have to add a separate filegroup and specify 'contains memory_optimized_data'.
 -- The 'filename' target of the in-memory filegroup is actually a directory name.
 -- It is recommended that the in-memory filegroup contain an EVEN number of directories
 -- (this is for perforance reasons based on the internal workings of Hekaton).
 -- Naturally, all of the path names will need to be modified to suit your environment.
+
+--alter database InMemoryDb set offline with rollback immediate;
+--alter database InMemoryDb set online with rollback immediate;
 
 drop database if exists InMemoryDb;
 

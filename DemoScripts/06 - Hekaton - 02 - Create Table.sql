@@ -28,3 +28,36 @@ create table dbo.Product
 insert dbo.Product (ProductID, Description, UnitPrice)
 values (1, 'Gizmo', 34.00),
 	(2, 'Whatzit', 16.00);
+
+-- Querying an in-memory table.
+select *
+from dbo.Product;
+
+-- However, inside an explicit transaction, we run into a problem.
+begin transaction;
+
+select *
+from dbo.Product;
+
+commit transaction;
+--Msg 41368, Level 16, State 0, Line 40
+--Accessing memory optimized tables using the READ COMMITTED isolation level is supported only for autocommit transactions. It is not supported for explicit or implicit transactions. Provide a supported isolation level for the memory optimized table using a table hint, such as WITH (SNAPSHOT).
+
+-- Try again at snapshot isolation level.
+-- (Can also run at repeatable_read or serializable isolation level.)
+begin transaction;
+
+select *
+from dbo.Product with (snapshot);
+
+commit transaction;
+
+-- Database-level option to avoid the need for this.
+alter database InMemoryDB set memory_optimized_elevate_to_snapshot on;
+
+begin transaction;
+
+select *
+from dbo.Product;
+
+commit transaction;
