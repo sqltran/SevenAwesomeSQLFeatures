@@ -3,6 +3,8 @@
 
 use InMemoryDB;
 
+alter authorization on database::InMemoryDB to sa;
+
 -- With a whole lot of limitations, stored procedures can be compiled into native machine code as a DLL that
 -- SQL Server will load and execute when the procedure is called.
 
