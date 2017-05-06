@@ -1,3 +1,6 @@
+-- 5/6/2017 by Allison Benneth (allison at sqltran dot org)
+-- Feel free to use in any way you would like.
+
 use PersonDW;
 go
 set statistics io on;

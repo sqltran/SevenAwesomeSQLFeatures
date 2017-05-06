@@ -1,9 +1,6 @@
------------------------------------------------------------------------------------------------------------------------
--- Hekaton: Create database
------------------------------------------------------------------------------------------------------------------------
--- Copyright 2015, Allison Benneth (allison@sqltran.org).
--- Feel free to use this code in any way you see fit, but do so at your own risk
------------------------------------------------------------------------------------------------------------------------
+-- 5/6/2017 by Allison Benneth (allison at sqltran dot org)
+-- Feel free to use in any way you would like.
+
 use master;
 go
 -- Create the database and enable Hekaton.

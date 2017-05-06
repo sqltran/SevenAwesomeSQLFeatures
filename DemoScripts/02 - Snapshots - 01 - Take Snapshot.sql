@@ -1,3 +1,6 @@
+-- 5/6/2017 by Allison Benneth (allison at sqltran dot org)
+-- Feel free to use in any way you would like.
+
 -- Must specify a filename to store the snapshot data
 create database CompanyHRSnapshot
 on (name = 'CompanyHR', filename = 'c:\data\CompanyHR.ss')

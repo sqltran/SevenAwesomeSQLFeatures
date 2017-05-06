@@ -1,3 +1,6 @@
+-- 5/6/2017 by Allison Benneth (allison at sqltran dot org)
+-- Feel free to use in any way you would like.
+
 -- Deploy a new stored proc that contains a nasty bug.
 use CompanyHR;
 go
